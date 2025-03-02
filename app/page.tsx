@@ -45,14 +45,14 @@ export default function Home() {
   });
 
   return (
-    <div className="container mx-auto p-4 flex gap-8">
+    <div className="container mx-auto p-4 flex gap-8 items-start">
       <HouseControls
         houses={houses}
         onAdd={addHouseMutation.mutate}
         onUpdate={(id, updatedHouse) => updateHouseMutation.mutate({ id, updatedHouse })}
         onDelete={deleteHouseMutation.mutate}
       />
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-end h-100 overflow-x-auto p-10">
         {houses.map((house) => (
           <HouseCard key={house.id} house={house} onDelete={deleteHouseMutation.mutate} />
         ))}
