@@ -44,6 +44,8 @@ export default function Home() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["houses"] }),
   });
 
+  console.log('page');
+
   return (
     <div className="container mx-auto p-4 flex gap-8 items-start">
       <HouseControls
@@ -54,7 +56,7 @@ export default function Home() {
       />
       <div className="flex gap-4 items-end h-100 overflow-x-auto p-10">
         {houses.map((house) => (
-          <HouseCard key={house.id} house={house} onDelete={deleteHouseMutation.mutate} />
+          <HouseCard key={house.id} house={house} />
         ))}
       </div>
     </div>
