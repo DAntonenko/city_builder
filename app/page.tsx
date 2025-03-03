@@ -44,8 +44,6 @@ export default function Home() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["houses"] }),
   });
 
-  console.log('page');
-
   return (
     <div className="container mx-auto p-4 flex gap-8 items-start">
       <HouseControls
